@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Words Detector</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Matn editor qismi (70%) -->
+        <div class="editor-container">
+            <h1>Stop Words Detector</h1>
+            <p class="stats">
+                Topilgan soʻzlar: <span id="totalWordsCount">0</span> | 
+                Stop so‘zlar: <span id="stopWordsCount">0</span> | 
+                Foiz: <span id="stopWordsPercentage">0%</span>
+            </p>
+            <div id="editor" contenteditable="true" class="editor"></div>
+        </div>
+
+        <div class="divider"></div>
+        
+        <!-- Statistik ma'lumotlar qismi (30%) -->
+        <aside class="aside">
+            <h2>Stop Words</h2>
+            <p>Bu yerda stopwordlar haqida ma'lumot chiqadi.</p>
+        </aside>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

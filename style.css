@@ -1,0 +1,117 @@
+/* Umumiy sahifa dizayni */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Sahifani ikki qismga bo‘lish (70% - 30%) */
+.container {
+  display: flex;
+  max-width: 100%;
+  gap: 20px;
+  height: 100vh;
+}
+
+/* Chap taraf: Matn editor (70%) */
+.editor-container {
+  flex: 7;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+h1 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.stats {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+.editor {
+  width: 100%;
+  height: 500px; /* Matn sig‘ishi uchun balandlik */
+  border: 1px solid #ccc;
+  padding: 20px;
+  font-size: 18px;
+  line-height: 1.6;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  position: relative; 
+}
+
+
+.editor:focus {
+  border-color: #8a2be2;
+  box-shadow: 0 0 8px rgba(138, 43, 226, 0.5);
+}
+
+/* Statistik qism (30%) */
+.aside {
+  flex: 3;
+  padding: 20px;
+  border-radius: 8px;
+  overflow-y: scroll;
+}
+
+.divider {
+  width: 1px;
+  background-color: #535151;
+  margin: 0 20px;
+  flex-shrink: 0;
+  align-self: stretch;
+}
+
+/* Statistik ma'lumotlar */
+.aside h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.aside p {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Stopword belgilari */
+.highlight {
+  background-color: rgba(255, 0, 255, 0.2);
+  text-decoration: underline;
+  font-weight: bold;
+  padding: 2px 4px;
+  border-radius: 3px;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Tooltip dizayni */
+.highlight::after {
+  content: "ℹ Bu stop word";
+  white-space: nowrap;
+  position: absolute;
+  left: 50%;
+  bottom: 100%; /* Tooltipni yuqoriga chiqarish */
+  transform: translateX(-50%);
+  background: white;
+  color: #333;
+  border: 1px solid #ccc;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  font-size: 12px;
+  display: none; /* Defaultda ko‘rinmas */
+  z-index: 999;
+}
+
+/* Tooltip faqat hover qilinganda chiqadi */
+.highlight:hover::after {
+  display: block;
+}
